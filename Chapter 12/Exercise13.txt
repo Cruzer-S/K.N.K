@@ -1,0 +1,10 @@
+#define N 10
+
+double ident[N][N];
+
+for (int *p = ident[0]; p < ident[0] + N * N; p++)
+{
+	if ( (p - ident[0]) / N 
+	==   (p - ident[0]) % N )	*p = 1.0;
+	else						*p = 0.0;	
+}

@@ -1,0 +1,8 @@
+legal: (b), (c)
+output
+(b): a
+(c): abc'\n'
+
+illegal: (a), (d)
+(a): fist argument of putchar need a character data type, not a character pointer data type.
+(d): first argument of puts need a character pointer data type, not a character type.

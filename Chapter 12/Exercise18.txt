@@ -1,0 +1,28 @@
+#include <ctype.h>
+
+int evaluate_position(char board[8][8])
+{
+	int eval = 0;
+
+	for (char *p = board[0]; p < ( board + (8 * 8) ); p++) {
+		switch ( toupper(*p) ) {
+		case 'Q':
+			eval += (islower(*p) ? (-8) : (8);
+			break;
+		case 'R':
+			eval += (islower(*p)) ? (-5) : (5);
+			break;
+		case 'B':
+			eval += (islower(*p)) ? (-3) : (3);
+			break;
+		case 'N':
+			eval += (islower(*p)) ? (-3) : (3);
+			break;
+		case 'P':
+			eval += (islower(*p)) ? (-1) : (1);
+			break;
+		}
+	}
+
+	return eval;
+}

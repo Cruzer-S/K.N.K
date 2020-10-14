@@ -1,0 +1,2 @@
+In the ASCII code page:
+result: computers

@@ -1,0 +1,13 @@
+bool test_extension(const char *f, const char *e)
+{
+	while ( *f != '.' && *f != '\0' ) *f++;
+	if ( *f++ == '\0' ) return false;
+
+	while ( toupper(*f) == toupper(*e) 
+		&&  *f != '\0' && *e != '\0' ) f++, e++;
+
+	if (*f == '\0' && *e == '\0')
+		return true;
+
+	return false;
+}

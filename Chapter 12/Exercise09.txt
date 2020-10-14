@@ -1,0 +1,12 @@
+double inner_product(const double *a, const double *b,
+					 int n) {
+	double result;
+
+	result = 0.0;
+	for (double *p = a, *q = b; 
+			    p < (a + n) && q < (b + n);
+				p++, q++) 
+		 result += (*p) * (*q);
+
+	return result;
+}

@@ -1,0 +1,18 @@
+void find_two_largest(const int *a, int n, int *largest, int *second_largest) 
+{
+	int large;
+
+	large = 0;
+	for (const int *p = (a + 1); p < (a + n); p++)
+		if (*p > *(a + large))
+			large = (p - a);
+
+	*largest = *(a + large);
+
+	*second_largest = *a;
+	for (const int *p = (a + 1); p < (a + n); p++) {
+		if (p - a == large) continue;
+		if (*p > *second_largest)
+			*second_largest = *p;
+	}
+}

@@ -1,0 +1,6 @@
+void remove_filename(char *url)
+{
+	while (*url++ != '\0');
+	while (*url-- != '/');
+	*(url + 1) = '\0';
+}

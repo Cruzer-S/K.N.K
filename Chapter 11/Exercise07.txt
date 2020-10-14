@@ -1,0 +1,36 @@
+void split_date(int day_of_year, int year, int *month, int *day)
+{
+	bool is_leap;
+
+	is_leap = false;
+	if (year % 4 == 0) {
+		if (year % 100 == 0)
+			is_leap = (year % 400 == 0) ? (false) : (true);
+		else
+			is_leap = true;
+	} else {
+		is_leap = true;
+	}
+
+	for (*month = 1; *month <= 12; (*month)++) {
+		switch (*month) {
+		case  1: case 3: case 5: case 7: 
+		case 10: case 8: case 12:
+			*day = 31;
+			break;
+		case 4: case 6: case 9: case 11:
+			*day = 30;
+			break;
+		case 2:
+			*day = is_leap ? 29 : 28;
+			break;
+		}
+
+		if ( (day_of_year - *day) <= 0 )
+			break;
+		else
+			day_of_year -= *day;
+	}
+
+	*day = day_of_year; 
+}

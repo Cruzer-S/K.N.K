@@ -1,0 +1,34 @@
+int largest_element(int n, int a[n])
+{
+	int largest;
+
+	largest = a[0];
+	for (int i = 1; i < n; i++)
+		if (largest < a[i])
+			largest = a[i];
+
+	return largest;
+}
+
+int average_element(int n, int a[n])
+{
+	int total;
+
+	total = 0;
+	for (int i = 0; i < n; i++)
+		total += a[i];
+
+	return total / n;
+}
+
+int positive_element(int n, int a[n])
+{
+	int positive;
+
+	positive = 0;
+	for (int i = 0; i < n; i++)
+		if (a[i] > 0)
+			positive++;
+
+	return positive;
+}

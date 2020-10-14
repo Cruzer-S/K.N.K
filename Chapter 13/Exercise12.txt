@@ -1,0 +1,14 @@
+void get_extension(const char *file_name, char *extension)
+{
+	const char *origin = file_name;
+
+	while ( (*file_name != '\0') && (*file_name != '.') )
+		file_name++;
+
+	if (*file_name == '\0') {
+		*extension = '\0';
+		return ;
+	}
+
+	strcpy(extension, file_name + 1);
+}

@@ -1,0 +1,14 @@
+void make_empty(void)
+{
+	top_ptr = contents;
+}
+
+bool is_empty(void)
+{
+	return ( top_ptr == contents );
+}
+
+bool is_full(void)
+{
+	return ( top_ptr == (contents + STACK_SIZE) );
+}

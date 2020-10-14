@@ -1,0 +1,29 @@
+int read_line(char *str, int n)
+{
+	char *origin = str;
+
+	if ( n <= 0 || str == NULL ) return -1;
+
+	// skip white-space
+	while ( isspace(*str = getchar()) ) {
+		if (*str == '\n') return 0;
+	} str++;
+
+	// discard character before the white-space character.
+	while ( !isspace(*str = getchar()) ) 
+		if ( (++str - origin) >= n)
+			return n;
+
+	size_t len = str - origin;
+	// check whether *str is new-line character	
+	if (*str == '\n') {
+		if ( len < (n - 1) )
+			origin[++len] = '\0';
+		return len;
+	} *str = '\0';
+
+	// skip remaining character before the new-line character.
+	while ( getchar() != '\n' );
+
+	return len;
+}

@@ -1,0 +1,4 @@
+(a) local variable b, d, external variable c
+(b) local variable a, c, d, external variable b
+(c) local variable a, c, d, external variable b
+(d) local variable c, d, external variable b

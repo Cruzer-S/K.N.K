@@ -1,0 +1,4 @@
+(a) a, b, c
+(b) a, d, e
+(c) a, d, e
+(d) a, f

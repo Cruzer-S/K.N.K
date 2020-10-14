@@ -1,0 +1,10 @@
+void censor(char *p)
+{
+	const char *search  = "foo",
+			   *replace = "xxx";
+
+	for (int slen = strlen(search),
+			 rlen = strlen(replace); *p; p++)
+		if ( !strncmp(p, search, slen) ) 
+			strncpy(p, replace, rlen);
+}

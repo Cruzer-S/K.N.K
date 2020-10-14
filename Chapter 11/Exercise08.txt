@@ -1,0 +1,11 @@
+int *find_largest(int a[], int n)
+{
+	int *largest;
+
+	largest = a;
+	for (int *comp = a + 1; comp < a + n; comp++)
+		if (*largest < *comp)
+			largest = comp;
+
+	return largest;
+}

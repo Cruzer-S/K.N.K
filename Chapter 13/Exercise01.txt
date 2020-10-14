@@ -1,0 +1,8 @@
+correct: (a), (d), (f), (g), (k)
+incorrect:
+(b): seconds argument of printf need a character type, not a string literal.
+(c): seconds argumnet of printf need a character pointer type, not a character type.
+(e): first argument of printf need a character pointer type, not a character type.
+(h): first argument of putchar need a character type, not a string literal.
+(i): first argument op puts need a character type, not character pointer type.
+(j): puts function automatically advance next line.

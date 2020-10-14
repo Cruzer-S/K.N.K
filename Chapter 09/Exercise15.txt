@@ -1,0 +1,13 @@
+double median(double x, double y, double z)
+{
+	double mid;
+
+	     if (x < y && z < y)
+		mid = (x < z) ? (z) : (x);
+	else if (x < z && y < z)
+		mid = (x < y) ? (y) : (x);
+	else
+		mid = (z < y) ? (y) : (z);
+
+	return mid;
+}

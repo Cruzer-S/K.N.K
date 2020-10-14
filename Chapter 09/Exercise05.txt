@@ -1,0 +1,11 @@
+int num_digit(int n)
+{
+	int result = 0;
+
+	do {
+		n /= 10;
+		result++;
+	} while (n > 0);
+
+	return result;
+}

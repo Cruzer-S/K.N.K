@@ -1,0 +1,23 @@
+void find_two_largest(int a[], int n, int *largest, int *second_largest) 
+{
+	int large, smallest;
+
+	smallest = large = a[0];
+	for (int i = 1; i < n; i++) {
+		if (a[i] < a[smallest])
+			smallest = i;
+
+		if (a[i] > a[large])
+			large = i;
+	}
+
+	*largest = a[large];
+	a[large] = a[smallest];
+
+	*second_largest = a[0];
+	for (int i = 1; i < n; i++)
+		if (a[i] > *second_largest)
+			*second_largest = a[i];
+
+	a[large] = *largest;
+}

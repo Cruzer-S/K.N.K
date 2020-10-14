@@ -1,0 +1,8 @@
+C supports three (and only three) forms of pointer arithmetic:
+	1. Adding an integer to a pointer
+	2. Subtracting an integer from a pointer
+	3. Subtracting one pointer from another
+therefore, adding two pointers are illegal.
+
+// middle = (high + low) / 2;
+middle = (high - low) / 2 + low;

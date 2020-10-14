@@ -1,0 +1,1 @@
+Answer: Using uninitialized character pointer variable q is undefined behavior. there's no space to hold string.

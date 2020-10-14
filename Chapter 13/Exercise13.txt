@@ -1,0 +1,9 @@
+void build_index_url(const char *domain, char *index_url)
+{
+	const char *HTTP = "http://www.";
+
+	char temp[strlen(index_url) + 1];
+	strcpy(temp, index_url);
+
+	sprintf(index_url, "%s%s/%s", HTTP, domain, temp);
+}

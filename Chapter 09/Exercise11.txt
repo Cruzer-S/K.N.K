@@ -1,0 +1,17 @@
+float compute_GPA(char grade[], int n)
+{
+	float gpa;
+
+	gpa = 0.0;
+	for (int i= 0; i < n; i++) {
+		switch (grade[i]) {
+			case 'A': gpa += 4.0; break;
+			case 'B': gpa += 3.0; break;
+			case 'C': gpa += 2.0; break;
+			case 'D': gpa += 1.0; break;
+			case 'F': gpa += 0.0; break;
+		}
+	}
+
+	return gpa / n;
+}
