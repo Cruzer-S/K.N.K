@@ -1,5 +1,5 @@
 # C Programming: A Modern Approach 2nd Edition
-**Organize Exercise & Programming Project**
+**Exercise & Programming Project**
 1. Chapter 02 (2020-09-07)
 2. Chapter 03 (2020-09-08)
 3. Chapter 04 (2020-09-09)
