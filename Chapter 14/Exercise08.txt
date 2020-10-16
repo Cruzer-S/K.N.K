@@ -1,0 +1,3 @@
+#define TO_STR(x)		#x			//convert argument to string literal 
+#define MCR_TO_STR(x)	TO_STR(x)	//convert macros to string literal 
+#define LINE_FILE		("Line " MCR_TO_STR(__LINE__) " of the file " __FILE__ )

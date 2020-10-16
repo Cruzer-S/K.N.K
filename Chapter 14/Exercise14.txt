@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+#define N = 10
+#define INC(x) x + 1
+#define SUB (x,y) x-y
+#define SQR(x)	((x)*(x))
+#define CUBE(x)	(SQR(x)*(x))
+#define M1(x,y) x##y
+#define M2(x,y) #x #y
+
+int main(void)
+{
+	//int a[N], i, j, k, m;	// error: int a[= 10], ... illegal
+	int a[10], i, j, k, m;
+
+#ifdef N
+	i = j;
+#else
+	j = i;	//won't execute
+#endif
+	i = 10 * INC(j);
+	//i = SUB(j, k);	//sub is not parameterized macro, simple macro
+	i = SQR(SQR(j));
+	i = CUBE(j);
+	//i = M1(j, k);	//i = jk; (illegal)
+	puts(M2(i, j));
+
+#undef SQR
+	//i = SQR(j);	//illegal, SQR not exist
+#define SQR
+	//i = SQR(j);	//illegal, SQR is simple macro, not parameterized macro
+
+	return 0;
+}

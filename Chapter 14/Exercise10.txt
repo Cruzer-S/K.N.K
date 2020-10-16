@@ -1,0 +1,3 @@
+Answer:
+It's difficult to write function to parameterized macro which function that have the block(including declaration) and return value.
+because expression can be used as a return type, but block can't be.

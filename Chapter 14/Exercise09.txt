@@ -1,0 +1,18 @@
+Answer:
+#define CHECK(x,y,n)	( (0 <= (x) && (x) <= ((n) - 1)) &&	\
+						  (0 <= (y) && (y) <= ((n) - 1))    )
+
+#define B(x,y)			( ((x) < (y)) ? (y) : (x) )
+#define	C(x,y,z)		CHECK(x,y,z)
+
+#define MEDIAN(x,y,z)	( C(x, y, z) ? B(x, y) : \
+						  C(z, x, y) ? B(z, x) : \
+									   B(z, y) )
+
+//#define POLYNOMIAL(x)	(((((3 * (x) + 2) \
+						       * (x) - 5) \
+							   * (x) - 1) \
+							   * (x) + 7) \
+							   * (x) - 6)
+#define P(n,x,k)		(((n) * (x)) + (k))
+#define POLYNOMIAL(x)	P(P(P(P(P(3, x, +2), x, -5), x, -1), x, +7), x, -6)

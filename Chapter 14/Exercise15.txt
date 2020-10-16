@@ -1,0 +1,12 @@
+void show_message(void)
+{
+#if   defined(ENGLISH)
+	puts("Insert Disk 1");
+#elif defined(FRENCH)
+	puts("Inserez Le Disque 1");
+#elif defined(SPANISH)
+	puts("Inserte El Disco 1");
+#else
+	puts("Unrecognized Country");
+#endif
+}

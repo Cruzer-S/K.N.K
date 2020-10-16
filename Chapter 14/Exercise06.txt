@@ -1,0 +1,2 @@
+Answer:
+#define DISP(f,v) printf(#f"(%g) = %g \n", v, f(v))
