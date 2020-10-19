@@ -1,0 +1,14 @@
+Answer: 
+(a) 1. grouping related functions and variables into a single file helps clarify the structure of the program. 
+    2. each source file can be compiled separately which can be save a huge time.
+    3. function are more easily reused in other programs when grouped in separate source file.
+	(1 - 3) in section 15.1
+	4. to divide large source file into small single source file can makes it easy to find error when debug program.
+	5. hiding information helps to focus on the essence. 
+	   they don't need to know what happens to source file when calling a function that declared in the header file.
+	(4 - 5) in my opinion
+
+(b) 1. incorrect dependency structure makes program maintenance more difficult. 
+       therefore we have to spend a lot of time not only just type source code to make program but also how to divide source file.
+	2. excessively scattered source file makes other to difficult to read the code and understand structure.
+	   make it worse, they even have to find the source code where main function was included.

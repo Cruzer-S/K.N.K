@@ -1,0 +1,1 @@
+Answer: No problem. If the file name is enclosed in quotation marks, the file "is searched for in an implementation-defined manner" and, if not found, then searched as if its name had been enclosed in brackets. 

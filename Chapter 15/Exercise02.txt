@@ -1,0 +1,2 @@
+Answer: (b) should not be put in a header file.
+Reason: there's no such rule that every C programmer must be. but in many cases, header file is used to share source code which consist of definition, and is also used to reduce duplication of same code by including type and macro definiton.
