@@ -1,0 +1,44 @@
+Answer: (a)
+unsigned long size_of_rectangle(struct rectangle r)
+{
+	return (r.lower_right.x - r.upper_left.x)
+		 * (r.lower_right.y - r.upper_left.y);
+}
+
+(b)
+struct point center_of_rectangle(struct rectangle r)
+{
+	return (struct point) {
+		.x = (r.lower_right.x + r.upper_left.x) / 2,
+		.y = (r.lower_right.y + r.upper_left.y) / 2
+	};
+}
+
+(c)
+struct rectangle move_rectangle(struct rectangle r, int x, int y)
+{
+	return (struct rectangle) {
+		.upper_left = (struct point) {
+			r.upper_left.x + x,
+			r.upper_left.y + y
+		},
+		
+		.lower_right = (struct point) {
+			r.lower_right.x + x,
+			r.lower_right.y + y
+		}
+	};
+}
+
+(d)
+#define BETWEEN(N, MIN, MAX) \
+		((N) < (MIN) ? false : (N) > (MAX) ? false : true)
+
+bool is_inside(struct rectangle r, struct point p) 
+{
+	if (BETWEEN(p.x, r.upper_left.x, r.lower_right.x)
+	&&  BETWEEN(p.y, r.upper_left.y, r.lower_right.y))
+		return true;
+
+	return false;
+}

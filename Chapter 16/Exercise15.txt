@@ -1,0 +1,9 @@
+Answer: (a)
+enum WEEKS {
+	SUN, MON, TUE, WED, THU, FRI, SAT,
+};
+
+(b)
+typedef enum {
+	SUN, MON, TUE, WED, THU, FRI, SAT,
+} WEEKS;

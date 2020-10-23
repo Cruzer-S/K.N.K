@@ -1,0 +1,9 @@
+Answer: (a)
+const struct color MAGENTA = {
+	.red = 255, .green = 0, .blue = 255
+};
+
+(b)
+const struct color MAGENTA = {
+	.red = 255, .blue = 255
+};

@@ -1,0 +1,4 @@
+Answer: legal: (a), (b), (d)
+(c): s.u.rectangle.height = 25;
+(e): s.u.circle.radius = 5;
+(f): s.u.circle.radius = 5;

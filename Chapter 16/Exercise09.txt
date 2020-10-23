@@ -1,0 +1,45 @@
+Answer: (a) ~ (c)
+#define BETWEEN(N, MIN, MAX) ((N) < MIN ? MIN : (N) > MAX ? MAX : (N))
+#define OVER(N, MAX) ((N) > MAX ? MAX : (N))
+#define UNDR(N, MIN) ((N) < MIN ? MIN : (N))
+
+struct color make_color(int red, int green, int blue) {
+	return (struct color) {
+		.red   = BETWEEN(red  , 0, 255), 
+		.green = BETWEEN(green, 0, 255),
+		.blue  = BETWEEN(blue , 0, 255)
+	};
+}
+
+(b)
+int getRed(struct color c)
+{
+	return c.red;
+}
+
+(c)
+bool equal_color(struct color color1, struct color color2)
+{
+	return (color1.red   == color2.red)   && 
+		   (color1.green == color2.green) &&
+		   (color1.blue  == color2.blue)  ;
+}
+
+(d)
+struct color brighter(struct color c)
+{
+	return equal_color(c, (struct color) { 0, 0, 0 }) ?
+		make_color(3, 3, 3) : make_color(
+		(c.red   = UNDR(c.red  , 3), OVER(c.red   / 0.7, 255)),
+		(c.green = UNDR(c.green, 3), OVER(c.green / 0.7, 255)),
+		(c.blue  = UNDR(c.blue , 3), OVER(c.blue  / 0.7, 255))
+	);
+}
+
+(e)
+struct color darker(struct color c)
+{
+	return make_color(BETWEEN(c.red   * 0.7, 0, 255),
+					  BETWEEN(c.green * 0.7, 0, 255),
+					  BETWEEN(c.blue  * 0.7, 0, 255));
+}

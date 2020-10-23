@@ -1,0 +1,2 @@
+Answer: legal, and also can appear in the same program.
+because member variables has own namespace. so it can distinguish each other.

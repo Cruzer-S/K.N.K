@@ -1,0 +1,30 @@
+Answer: (a)
+unsigned long shape_size(struct shape s)
+{
+	switch (s.shape_kind) {
+	case RECTANGLE: 
+		return s.rectangle.height 
+		     * s.rectangle.width;
+		break;
+
+	case CIRCLE: 
+		return s.circle.radius * s.circle.radius;
+		break;
+	}
+}
+
+(b)
+struct shape move_shape(struct shape s, int x, int y)
+{
+	s.center.x += x, s.center.y += y;
+
+	return s;
+}
+
+(c)
+struct shape scaling_shape(struct shape s, double c)
+{
+	s.height *= c, s.width *= c;
+	
+	return s;
+}

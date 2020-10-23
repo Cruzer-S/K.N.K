@@ -1,0 +1,13 @@
+Answer:
+struct time split_time(long total_seconds)
+{
+	struct time ret = { .seconds = total_seconds };
+
+	ret.minutes = ret.seconds / 60;
+	ret.seconds %= 60;
+
+	ret.hours = ret.minutes / 60;
+	ret.minutes %= 60;
+
+	return ret;
+}

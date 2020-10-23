@@ -1,0 +1,40 @@
+Answer: (a)
+int month_of_day(int year, int month)
+{
+	static const int month_to_day[] = {
+		31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
+	};
+
+	bool is_leap = false;
+	
+	if (year % 4 == 0) {
+		if (year % 100 == 0)
+			is_leap = (year % 400 == 0) ? (false) : (true);
+		else
+			is_leap = true;
+	} else {
+		is_leap = true;
+	}
+
+	return month_to_day[month - 1] + (is_leap && month == 2);
+}
+
+int day_of_year(struct date d)
+{
+	int result = d.day;
+
+	for (int k = 1; k < d.month; k++)
+		result += month_of_day(d.year, k);
+
+	return result;
+}
+
+(b)
+int compare_date(struct date d1, struct date d2)
+{
+	int day1 = d1.year * 365 + d1.month * 30 + d1.day,
+		day2 = d2.year * 365 + d2.month * 30 + d2.day;
+
+	return (day1 == day2) ? +0 :	
+		   (day1  < day2) ? -1 : +1;
+}

@@ -1,0 +1,48 @@
+Answer: (a)
+int gcd(struct fraction f)
+{
+	while (f.denominator > 0) {
+		int remain = f.numerator % f.denominator;
+		f.numerator = f.denominator;
+		f.denominator = remain;
+	}
+
+	return f.numerator;
+}
+
+struct fraction lowest_term(struct fraction f)
+{
+	int n = gcd(f);
+
+	return (struct fraction) {
+		.numerator   = f.numerator / n,
+		.denominator = f.denominator / n
+	};
+}
+
+(b) ~ (e)
+#define CREATE_FRACTIONAL_FUNCTION(name, op1, op2)						\
+struct fraction name##_fraction(struct fraction f1, struct fraction f2)	\
+{																		\
+	return lowest_term((struct fraction) {								\
+		.numerator = op1, .denominator = op2							\
+	});																	\
+}
+
+(b)
+CREATE_FRACTIONAL_FUNCTION(add, // add_fraction
+	f1.numerator * f2.denominator + f2.numerator * f1.denominator, 
+	f1.denominator * f2.denominator)
+
+(c)
+CREATE_FRACTIONAL_FUNCTION(sub, // sub_fraction
+	f1.numerator * f2.denominator - f2.numerator * f1.denominator,
+	f1.denominator * f2.denominator) 
+
+(d)
+CREATE_FRACTIONAL_FUNCTION(mul, // mul_fraction
+	f1.numerator * f2.numerator, f1.denominator * f2.denominator) 
+
+(e)
+CREATE_FRACTIONAL_FUNCTION(div, // div_fraction
+	f1.numerator * f2.denominator, f1.denominator * f2.numerator)
