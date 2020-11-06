@@ -1,0 +1,12 @@
+Answer:
+int count_occurrences(struct node *list, int n)
+{
+	int count;
+
+	for (count = 0; list != NULL; 
+		 count += (list->data == n)) {
+		list++;
+	}
+
+	return count;
+}

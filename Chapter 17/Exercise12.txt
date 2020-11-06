@@ -1,0 +1,9 @@
+struct node *find_last(struct node *list, int n)
+{
+	struct node *last;
+
+	for (*last = NULL; list != NULL;
+		 (list->data == n) || last = list) list++;
+
+	return last;
+}

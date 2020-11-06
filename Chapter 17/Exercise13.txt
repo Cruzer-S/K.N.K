@@ -1,0 +1,25 @@
+Answer:
+struct node *insert_into_ordered_list(
+		struct node *list,
+		struct node *new_node) 
+{
+	struct node *cur, *prev;
+
+	if (list == NULL)
+		return new_node;
+
+	for (prev = NULL, cur = list;
+		 (cur != NULL) && (cur->data <= new_node->data);
+		 prev = cur, cur = cur->next) ;
+
+	if (prev != NULL) {
+		prev->next = new_node;
+		new_node->next = cur;
+	} else {
+		new_node->next = cur;
+		list = new_node;
+	} 
+
+	return list;
+}
+

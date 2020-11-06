@@ -1,0 +1,13 @@
+Answer:
+char *duplicate(const chr *source)
+{
+	void *ret;
+	size_t len = strlen(source);
+
+	ret = malloc(len + 1);
+	if (ret == NULL) return NULL;
+
+	strcpy(ret, source);
+
+	return ret;
+}

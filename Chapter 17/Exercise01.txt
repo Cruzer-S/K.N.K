@@ -1,0 +1,13 @@
+Answer:
+void *my_malloc(size_t size)
+{
+	void *ret = malloc(size);
+
+	if (ret == NULL) {
+		fputs("failed to call my_malloc() function \n", stderr);
+
+		exit(EXIT_FAILURE);
+	}
+
+	return ret;
+}

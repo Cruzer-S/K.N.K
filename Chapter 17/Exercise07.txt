@@ -1,0 +1,5 @@
+Answer: previous example access non-exist memory which is released by free function. there's one more variable is needed to keep track of next node.
+
+for (q = first, p = NULL; 
+		 p = q, p != NULL; 
+		 q = p->next, free(p));

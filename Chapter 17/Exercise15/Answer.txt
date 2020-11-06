@@ -1,0 +1,5 @@
+1. f1 call a function pointer which is f2.
+2. f2 return a value of polynomial 'x * x + x - 12'
+3. f1 check whether f2's return value is true or false. if false then increase n.
+4. n is reached 3, f2's return value is 0 (3 * 3 + 3 - 12 = 0)
+5. print 3 which is value of n.

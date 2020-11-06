@@ -1,0 +1,17 @@
+Answer:
+struct node *delete_from_list(struct node *list, int n)
+{
+	for (struct node *prev = list;
+				list != NULL && list->value != n;
+				prev = list, list = list->next);
+
+	if (list == NULL)
+		return NULL;
+
+	if (prev != NULL)
+		prev->next = list->next;
+
+	free(list);
+
+	return prev;
+}
