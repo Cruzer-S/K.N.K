@@ -1,0 +1,28 @@
+Answer:
+(a)
+typedef char fcn(int);
+typedef fcn *fcn_ptr;
+typedef fcn_ptr fcn_ptr_arr[10];
+
+fcn_ptr_arr a;
+
+(b)
+typedef int arr[5];
+typedef arr *arr_ptr;
+typedef arr_ptr arr_ptr_fcn(int);
+
+arr_ptr_fcn a;
+
+(c)
+typedef float* fcn(int);
+typedef fcn *fcn_ptr;
+typedef fcn_ptr fcn_ptr_fcn(void);
+
+fcn_ptr_fcn a;
+
+(d)
+typedef void fcn(int);
+typedef fcn *fcn_ptr;
+typedef fcn_ptr fcn_ptr_fcn(int, fcn_ptr);
+
+fcn_ptr_fcn a;

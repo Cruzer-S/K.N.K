@@ -1,0 +1,34 @@
+Answer: (a) f is function with two arguments: first argument is function pointer which have long argument and return float. second argument is char pointer. f return a function pointer which called with double argument and returning int.
+(b)
+#include <stdio.h>
+
+int (*f(float (*)(long), char *)) (double);
+
+float ToFloat(long );
+int ToInt(double );
+
+int main(void)
+{
+	printf("f(ToFloat, \"Hello?\")(10.0): %d \n", f(ToFloat, "Hello?")(10.0));
+
+	return 0;
+}
+
+int ToInt(double value)
+{
+	return value;
+}
+
+float ToFloat(long value)
+{
+	return value;
+}
+
+int (*f(float (*func)(long), char *name)) (double)
+{
+	printf("What's you name? %s\n", name);
+	printf("func(42L): %f \n", func(42L));
+
+	return ToInt;
+}
+

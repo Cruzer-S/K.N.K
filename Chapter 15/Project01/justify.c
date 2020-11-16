@@ -1,4 +1,5 @@
 #include <string.h>
+#include <stdio.h>
 #include "line.h"
 #include "word.h"
 
@@ -12,8 +13,9 @@ int main(void)
 	clear_line();
 	for (;;) {
 		read_word(word, MAX_WORD_LEN + 1);
-		word_len = strlen(word);
-		
+		word_len = strlen(word);	
+		printf("%d-", space_remaining());
+
 		if (word_len == 0) {
 			flush_line();
 			break;

@@ -1,0 +1,5 @@
+Answer: storage class, type qualifer, type specifier, declarator, initializer
+(a) static, none, char , **lookup(int level), none
+(b) can't determine, volatile, unsigned long, io_flags
+(c) extern, none, char, *file_name[MAX_FILES], path[], none
+(d) static, const, char, token_buf[], ""

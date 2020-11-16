@@ -43,13 +43,11 @@ void write_line(void)
 	rem = ext % 2;
 	ext /= 2;
 	
-#ifdef DEBUG
 	printf("extra : %d \n"
 		   "insert: %d \n"
 		   "line  : %d \n"
 		   "remain: %d \n"
 		   "word  : %d \n", ext, ins, line_len, rem, num_words);
-#endif	
 
 	for (int k = 0, cnt = 0, add = 0; k < line_len; k++) {
 		if (line[k] != ' ') {

@@ -1,0 +1,6 @@
+Answer: stoage duration (static or auto), scope, and linkage(internal, external, none)
+a.  static, file scope, external
+f. static, file scope, external
+b. auto, block scope, none
+c. static, block scope, none
+d. auto, block scope, none

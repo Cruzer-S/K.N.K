@@ -1,0 +1,5 @@
+Answer:
+(a) x is array of function pointer which is called with int argument and returned char.
+(b) x is function returning two-dimensional array pointer which length of first dimension is 3.
+(c) x is function returning function pointer which return float pointer and have int its argumnet
+(d) x is function returning function pointer which have int argument, called with int argument and function pointer which have int argument.
