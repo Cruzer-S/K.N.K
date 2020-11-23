@@ -1,0 +1,7 @@
+Answer:
+unsigned short create_short(unsigned char high_byte,
+							unsigned char low_byte) 
+{
+	return ((unsigned short)high_byte << 8) + 
+			(unsigned short)low_byte;
+}

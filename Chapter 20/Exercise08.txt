@@ -1,0 +1,4 @@
+Answer:
+(a) turning on right n bit only.
+(b) extract bit between (m + 1) - n to (m + 1).
+

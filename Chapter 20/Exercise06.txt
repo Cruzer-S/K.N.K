@@ -1,0 +1,19 @@
+Answer:
+#include <stdio.h>
+
+unsigned short swap_bytes(unsigned short i)
+{
+	return ((i << 8) & 0xFF00) | ((i >> 8) & 0x00FF);
+}
+
+int main(void)
+{
+	unsigned short number;
+
+	printf("Enter a hexadecimal number (up to four digits): ");
+	scanf("%4hx", &number);
+
+	printf("Number with bytes swapped: %.4hx \n", swap_bytes(number));
+
+	return 0;
+}

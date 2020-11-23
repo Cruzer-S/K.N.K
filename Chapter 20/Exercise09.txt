@@ -1,0 +1,25 @@
+Answer:
+(a)
+int count_ones(unsigned char ch)
+{
+	int count;
+
+	for (count = 0; ch; count++)
+		ch &= (ch - 1);
+
+	return count;
+}
+
+(b)
+#define B2(n) n, n + 1, n + 1, n + 2
+#define B4(n) B2(n), B2(n + 1), B2(n + 1), B2(n + 2)
+#define B6(n) B4(n), B4(n + 1), B4(n + 1), B4(n + 2)
+
+int count_ones(unsigned char ch)
+{
+	static const char bits[256] = {
+		B6(0), B6(1), B6(1), B6(2)
+	};
+
+	return bits[ch];
+}

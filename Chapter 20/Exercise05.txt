@@ -1,0 +1,4 @@
+Answer:
+#define GET_RED(C)		(((C) >> 0 ) & 0x0000FF)
+#define GET_GREEN(C)	(((C) >> 8 ) & 0x0000FF)
+#define GET_BLUE(C)		(((C) >> 16) & 0x0000FF)

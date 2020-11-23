@@ -1,0 +1,15 @@
+Answer:
+#define bitof(X) (sizeof(X) * 8)
+
+unsigned int reverse_bits(unsigned int n)
+{
+	unsigned int r, k;
+
+	for (r = 0, k = 0; n; k++)
+		r <<= 1, r += (n & 1), n >>= 1;
+
+	if (k < bitof(unsigned int))
+		r <<= bitof(unsigned int) - k;
+
+	return r;
+}

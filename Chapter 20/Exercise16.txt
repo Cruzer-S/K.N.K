@@ -1,0 +1,27 @@
+Answer:
+#define DWORD unsigned long 
+#define WORD  unsigned short 
+#define BYTE  unsigned char
+
+union {
+	struct {
+		DWORD eax, 
+			  ebx, 
+			  ecx, 
+			  edx;
+	} dword;
+
+	struct {
+		WORD ax, :8, :8,
+			 bx, :8, :8,
+			 cx, :8, :8,
+			 dx, :8, :8;
+	} word;
+
+	struct {
+		BYTE al, ah, :8, :8, 
+			 bl, bh, :8, :8, 
+			 cl, ch, :8, :8, 
+			 dl, dh, :8, :8;
+	} byte;
+} regs;
