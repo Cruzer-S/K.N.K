@@ -1,0 +1,13 @@
+Answer: /usr/include/ctype.h
+# define isalnum(c)	__isctype((c), _ISalnum)
+# define isalpha(c)	__isctype((c), _ISalpha)
+# define iscntrl(c)	__isctype((c), _IScntrl)
+# define isdigit(c)	__isctype((c), _ISdigit)
+# define islower(c)	__isctype((c), _ISlower)
+# define isgraph(c)	__isctype((c), _ISgraph)
+# define isprint(c)	__isctype((c), _ISprint)
+# define ispunct(c)	__isctype((c), _ISpunct)
+# define isspace(c)	__isctype((c), _ISspace)
+# define isupper(c)	__isctype((c), _ISupper)
+# define isxdigit(c)	__isctype((c), _ISxdigit)
+ ...

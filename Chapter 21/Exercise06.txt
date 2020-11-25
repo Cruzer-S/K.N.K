@@ -1,0 +1,13 @@
+Answer:
+(a) because all identifiers begin with an underscore are reserved for the standard libarary. therefore programmer can avoid to use the name of macro such as "_UPPER".
+
+(b) _ctype contain code table of specific environment.
+Horizontal tab: 40
+Space bar: 32
+"A": 65
+^: 0
+
+(c) There's three advantages using array.
+1. There's no function call. Additional machine code doesn't insert.
+2. Increasing code reusability. Each ctype header function only call the _ctype function.
+3. Hash table faster than Linear searching. To use array can make performance more faster rather than searching all characters using function call.
