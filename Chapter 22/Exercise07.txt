@@ -1,0 +1,5 @@
+Answer:
+(a) i =  10, x = 20.0, j =  30, n = 3 
+(b) i =   1, x =  0.0, j =   2, n = 3 
+(c) i =   0, x =  0.1, j =   0, n = 3 
+(d) i = Nan, x =  Nan, j = Nan, n = 0

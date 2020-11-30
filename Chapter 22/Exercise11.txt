@@ -1,0 +1,1 @@
+Answer: Program can be run without error. But equality operator is preceded over assignment, therefore "getc(source_fp) != EOF" evalute first then assigned to variable ch, value is either 0(false) or 1(true).

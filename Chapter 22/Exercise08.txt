@@ -1,0 +1,1 @@
+Answer: " %c" skip white-space and store one 'character' to object. "%1s" skip whitespace like %c does, but it store one 'string' to object. it means that one character and following null character also stored to object.

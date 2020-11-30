@@ -1,0 +1,7 @@
+Answer: closing fp, but don't know whether fp is opened or not
+
+FILE *fp;
+if (fp = fopen(filename, "r")) {
+	// read chracters until end-of-file
+	fclose(fp);
+}

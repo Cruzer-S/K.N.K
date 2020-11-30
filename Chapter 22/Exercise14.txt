@@ -1,0 +1,30 @@
+Answer:
+char *fugets(char *s, int size, FILE *stream)
+{
+	const char *o = s;
+	int ch;
+
+	for (ch = fgetc(stream); 
+		 ch != EOF && (s - o) < (size - 1);
+		 ch = fgetc(stream)) 
+	{
+		*s++ = ch;
+		if (ch == '\n') break;
+	}
+
+	*s = '\0';
+
+	return (ch == EOF) ? NULL : (char *)o;
+}
+
+int fuputs(const char *s, FILE *stream)
+{
+	if (s == NULL) return EOF;
+
+	for (char *t = (char *)s; *t != '\0'; *t++)
+		if (*t == EOF) return EOF;
+		else		   fputc(*t, stream);
+
+	return 1;
+}
+

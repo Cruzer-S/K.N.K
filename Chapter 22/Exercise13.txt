@@ -1,0 +1,21 @@
+Answer:
+int line_length(const char *filename, int n)
+{
+	FILE *fp;
+	int len;
+
+	fp = fopen(filename, "r");
+	if (fp == NULL) return -1;
+
+	for (len = -1; fscanf(fp, "%*[^\n]%n%*c", &len) != EOF; len = -1) {
+		if ( len == -1 ) fgetc(fp);
+		if ( feof(fp) )  n = -1;
+		if ( --n > 0 )   continue;
+
+		fclose(fp);
+		return len;	
+	}
+
+	fclose(fp);
+	return 0;
+}

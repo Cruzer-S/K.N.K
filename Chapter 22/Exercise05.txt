@@ -1,0 +1,8 @@
+Answer: Zero flag padded with leading zeros up to the field width. But precision with d conversion means that how many digits are printed.
+
+printf("%010d \n", -123912);
+printf("%.10d \n", -123912);
+
+result is...
+-000123912 
+-0000123912 

@@ -1,0 +1,5 @@
+Answer:
+(a) fseek(fp, 64 * n, SEEK_SET);
+(b) fseek(fp, -64, SEEK_END);
+(c) fseek(fp, 64, SEEK_CUR);
+(d) fseek(fp, -64 * 2, SEEK_CUR);

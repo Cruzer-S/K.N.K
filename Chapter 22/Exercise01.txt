@@ -1,0 +1,4 @@
+Answer: (a) binary
+(b) text
+(c) text
+(d) binary
