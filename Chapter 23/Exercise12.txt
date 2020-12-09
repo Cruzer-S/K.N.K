@@ -1,0 +1,59 @@
+Answer:
+(a)
+char *strdup(const char *s)
+{
+	char *ret = malloc((strlen(s) + 1) * sizeof(char));
+	if (ret == NULL) return NULL;
+
+	strcpy(ret, s);
+
+	return ret;
+}
+
+(b)
+int stricmp(const char *s1, const char *s2)
+{
+	while ( ( *s1 != '\0' && *s2 != '\0'    )
+	&&      (toupper(*s1) == toupper(*s2)   ) ) 
+	{				s1++, s2++;				  }
+
+	return *s1 - *s2;
+}
+
+(c)
+char *strlwr(char *s)
+{
+	char *origin = s;
+
+	while (*s != '\0')
+		*s++ = tolower(*s);
+
+	return origin;
+}
+
+(d)
+char *strrev(char *s)
+{
+	for (//=======================================//
+	/**/  char *first = s, temp,				  //
+	/**/	   *last  = s + strlen(s) - 1;	      //
+	//============================================//
+	/**/		first < last;					  //
+	//============================================//
+	/**/		first++, --last)				  //
+	//============================================//
+	{ temp = *first, *first = *last, *last = temp; }
+
+	return s;
+}
+
+(e)
+char *strset(char *s, char ch)
+{
+	char *origin = s;
+
+	while ( *s != '\0' )
+		*s++ = ch;
+
+	return origin;
+}

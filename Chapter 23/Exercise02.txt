@@ -1,0 +1,10 @@
+Answer:
+double evaluate_polynomial(double a[], int n, double x)
+{
+	double result = fma(a[0], x, a[1]);
+
+	for (int k = 1; k < n; k++)
+		result = fma(result, x, a[k + 1]);
+
+	return result;
+}

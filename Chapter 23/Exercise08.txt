@@ -1,0 +1,11 @@
+Answer:
+int numchar(const char *s, char ch)
+{
+	int result = 0;
+
+	for (char *ptr = (char *)s - 1;
+		      (ptr = strchr(ptr + 1, ch));
+		       result++);
+
+	return result;
+}

@@ -1,0 +1,9 @@
+Answer: the answer is YES, but it may be change origin string.
+for (char *position = str, *ptr, value = *str;
+	 (ptr = strrchr(str, 'a')) != NULL || (*position = value, false);
+	 position = ptr, value = *ptr, *ptr = '\0') 
+{
+	if (position) *position = value;
+
+	printf("%s\n", ptr);
+}

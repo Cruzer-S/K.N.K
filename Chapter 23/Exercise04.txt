@@ -1,0 +1,17 @@
+Answer:
+bool is_identifier(const char *name)
+{
+	if (name == NULL) return false;
+	if (*name == '\0') return false;
+
+	if ( !isalpha(*name) && *name != '_')
+		return false;
+
+	while ( *++name != '\0' ) {
+		if ( isalnum(*name) || *name == '_')
+			continue;
+		return false;
+	}
+
+	return true;
+}

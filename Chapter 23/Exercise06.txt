@@ -1,0 +1,5 @@
+Answer:
+(a) memcpy
+(b) memmove 
+(c) strncpy
+(d) strcpy

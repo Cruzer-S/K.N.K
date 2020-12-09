@@ -1,0 +1,24 @@
+Answer:
+double round_nearest(double x, int y)
+{
+	double c;
+
+	c = pow(10.0, y);
+	if (c == INFINITY || c == -INFINITY)
+		return c;
+
+	x *= c;
+	x = (x < 0.0) ? ceil(x - 0.5) : floor(x + 0.5);
+	if (x == INFINITY || x == -INFINITY) {
+		if (math_errhandling & MATH_ERRNO)
+			errno = ERANGE;
+
+		if (math_errhandling & MATH_ERREXCEPT)
+			if (feraiseexcept(FE_OVERFLOW) != 0)
+				abort();
+
+		return x;
+	}
+
+	return x / c;
+}

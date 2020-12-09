@@ -1,0 +1,40 @@
+Answer:
+int hex_to_int(int ch)
+{
+	static const char 
+	*origin_lower = "0123456789abcdef",
+	*origin_upper = "ABCDEF";
+
+	static const int 
+	length_lower = 16,
+	length_upper = 6;
+	
+	char *check;
+
+	check = memchr(origin_lower, ch, length_lower);
+	if ( check != NULL )
+		return check - origin_lower;
+
+	check = memchr(origin_upper, ch, length_upper);
+	if ( check != NULL )
+		return (check - origin_upper) + 10;
+
+	return -1;
+}
+
+long int is_hexnum(const char *hexstr)
+{
+	long int result = 0;
+
+	if (hexstr == NULL) return -1;
+	if (*hexstr == '\0') return -1;
+
+	do {
+		if ( !isxdigit(*hexstr) )
+			return -1;
+		else
+			result = (result * 16) + hex_to_int(*hexstr);
+	} while ( *++hexstr != '\0' );
+
+	return result;
+}

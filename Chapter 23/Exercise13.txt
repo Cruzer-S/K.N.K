@@ -1,0 +1,11 @@
+Answer:
+int count_words(char *sentence)
+{
+	int result = 0;
+
+	for ( char *str = strtok(sentence, " \n\t"); 
+			    str; str = strtok(NULL," \n\t")  ) 
+	{			result++;						 }
+
+	return result;
+}

@@ -1,0 +1,2 @@
+Answer: GCC 10.2.1 20201016 (Red Hat 10.2.1-6)
+When -ffp-contract optimization option turn on, perform floationg-point expression contraction.
