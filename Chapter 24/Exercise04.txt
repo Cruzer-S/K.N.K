@@ -1,0 +1,20 @@
+Answer:
+(a)
+double try_math_fcn(double (*func)(double ), double x, 
+		            const char *error_message)
+{
+	double ret;
+
+	errno = 0;
+	ret = func(x);
+	if (errno) {
+		perror(error_message);
+		exit(EXIT_FAILURE);
+	}
+
+	return ret;
+}
+
+(b)
+#define TRY_MATH_FCN(FUNC, VAL)								\
+		try_math_fcn(FUNC, VAL, "Error in call of " # FUNC)

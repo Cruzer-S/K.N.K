@@ -1,0 +1,6 @@
+Answer: 
+(a) The first case, because assertion may be used to detect error
+    but the second case can't be controlled by assertion.
+(b) 1. signal
+    2. undefined behavior
+	3. out of memory
