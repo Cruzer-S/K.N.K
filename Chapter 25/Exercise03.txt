@@ -1,0 +1,4 @@
+Answer: It isn't.
+For example, one character which is two-byte consists of 0x81 and 0x80, and 
+the other which is one byte consists of 0x80. There's no way to check whet-
+her 0x80 is a subsequent two-byte character or just a one-byte character.

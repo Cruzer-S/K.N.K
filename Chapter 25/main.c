@@ -3,31 +3,31 @@
 #include <locale.h>
 #include <assert.h>
 #include <wchar.h>
+#include <stdbool.h>
+#include <limits.h>
+#include <string.h>
 
-#define PRINT(X) printf(#X "= %d \n", X);
+#define PRINT(X) printf(#X " = %d \n", X);
 
-int mbcheck(const char *s)
+int main(int argc, char *argv[])
 {
-	for (int n = mblen(NULL, 0); ; s += n) {
-		if ((n = mblen(s, MB_CUR_MAX)) <= 0) {
-			printf("n: %d \n", n);
-			return n;
-		} else printf("n: %d \n", n);
-	}
-}
+	char *locale;
+	printf("argc: %d \n", argc);
 
-int main(void)
-{
-	char *sjis[] = {
-		"\x05\x87\x80\x36\xed\xaa",
-		"\x20\x12"
-	};
+	switch (argc) {
+	case 1: locale = setlocale(LC_ALL, "ko_KR.UTF-8");
+			break;
+	case 2: locale = setlocale(LC_ALL, "ko_KR.euckr");
+			break;
+	case 3: locale = setlocale(LC_ALL, "C");
+			break;
+	} printf("locale: %s \n", locale);
 
-	if (setlocale(LC_ALL, "") == NULL)
-		abort();
-	else printf("setlocale: %s \n", setlocale(LC_ALL, NULL));
+	printf("\xc3\xb4 ""\uc3b4 \n");
+	fprintf (stdout, "%C %C \n", 0xc3b4, L'척');
+	fwprintf(stderr, L"%C %C \n", 0xc3b4, L'척');
 
-	PRINT(mbcheck(sjis[0]));
+	//https://r12a.github.io/app-encodings/
 
 	return 0;
 }

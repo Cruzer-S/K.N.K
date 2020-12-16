@@ -1,0 +1,6 @@
+Answer:
+(a) "C\xf4te d'Azur",
+(b) "cr\xe8me br\xfbl\xea""e",
+(c) "cr\xe8me fra\xee""che",
+(d) "Fahrvegn\xfc""gen",
+(e) "t\xeate-\xe0-t\xeate"
