@@ -1,0 +1,7 @@
+Answer:
+(a) strftime(date_time, sizeof(date_time), 
+			 "%Y-%j", localtime(&current));
+(b) strftime(date_time, sizeof(date_time),
+			 "%Y-W%V-%u", localtime(&current));
+(c) strftime(date_time, sizeof(date_time),
+			 "%FT%T", localtime(&current));

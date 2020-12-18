@@ -1,0 +1,2 @@
+Answer: as long as the element of the array just sorted by the comparison 
+function, bsearch function will work properly.

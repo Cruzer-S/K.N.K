@@ -1,0 +1,15 @@
+Answer:
+int max_int(int larg, ...)
+{
+	va_list ap;
+
+	va_start(ap, larg);
+
+	for (int comp = va_arg(ap, int);
+			 comp != 0; comp = va_arg(ap, int))
+		if (larg < comp) larg = comp;	
+
+	va_end(ap);
+	
+	return larg;
+}

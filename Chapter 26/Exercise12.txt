@@ -1,0 +1,16 @@
+Answer:
+size_t first_day_of(int year)
+{
+	struct tm t = {
+		.tm_year  = (year - 1900),
+		.tm_mon   = 0,
+		.tm_mday  = 1,
+
+		.tm_hour  = 0,
+		.tm_min   = 0,
+		.tm_sec   = 0,
+		.tm_isdst = -1,
+	};
+
+	return mktime(&t);
+}

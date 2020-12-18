@@ -1,0 +1,13 @@
+Answer:
+void display(int cnt, ...)
+{
+	va_list ap;
+
+	va_start(ap, cnt);
+
+	while (cnt-- > 0)
+		printf("%s%c", va_arg(ap, char *)
+					 , "\n "[cnt > 0]);
+
+	va_end(ap);
+}

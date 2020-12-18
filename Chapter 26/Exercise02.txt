@@ -1,0 +1,41 @@
+Answer:
+void rev(int val)
+{
+	if (val <= 0) 
+		return ;
+	else 
+		rev(val / 10);
+
+	putchar("0123456789"[val % 10]);
+}
+
+int simprt(const char *fmt, ...)
+{
+	va_list ap;
+
+	va_start(ap, fmt);
+
+	for (int ch = *fmt; ch != '\0'; ch = *++fmt)
+	{
+		if (ch != '%') {
+			putchar(ch);
+			continue;
+		}
+
+		ch = *++fmt;
+		if (ch == '\0') break;
+		if (ch == 'd') {
+			int val = va_arg(ap, int);	
+			if      (val == 0) 
+				putchar('0');
+			else if (val  < 0) {
+				putchar('-');
+				rev(-val);
+			} else rev(val);
+		}
+	}
+
+	va_end(ap);
+
+	return 0;
+}

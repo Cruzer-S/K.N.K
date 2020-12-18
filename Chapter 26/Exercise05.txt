@@ -1,0 +1,28 @@
+Answer:
+char *vstrcat(const char *first, ...)
+{
+	va_list ap;
+	size_t size  = 0;
+	char *catstr = NULL;
+	//===========================================
+	va_start(ap, first);
+	for (const char *str = first; str != NULL;
+					 str = va_arg(ap, char *))
+	{			size += strlen(str);			}
+	//===========================================
+	catstr = malloc(size + 1);
+	if (catstr == NULL) {
+		va_end(ap);
+		return NULL;
+	} else *catstr = '\0';
+
+	va_start(ap, first);
+	for (const char *str = first; str != NULL;
+					 str = va_arg(ap, char *))
+	{			strcat(catstr, str);			}
+	//===========================================
+	
+	va_end(ap);
+
+	return catstr;
+}

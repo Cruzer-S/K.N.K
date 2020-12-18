@@ -1,0 +1,2 @@
+Answer: read the 'p' and save the value to a variable 'number,' and change
+p to a pointer which points to at the ends of the number in string.

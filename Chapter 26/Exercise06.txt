@@ -1,0 +1,27 @@
+Answer:
+char *max_pair(int num_pairs, ...)
+{
+	va_list ap;
+
+	struct pair {
+		int number;
+		char *string;
+	} max, comp ;
+
+	va_start(ap, num_pairs);
+
+	max.number = va_arg(ap, int);
+	max.string = va_arg(ap, char *);
+
+	while (--num_pairs > 0) {
+		comp.number = va_arg(ap, int);
+		comp.string = va_arg(ap, char *);
+
+		if (max.number < comp.number)
+			memcpy(&max, &comp, sizeof(struct pair));
+	}
+
+	va_end(ap);
+
+	return max.string;
+}
