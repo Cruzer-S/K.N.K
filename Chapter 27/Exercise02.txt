@@ -1,0 +1,5 @@
+Answer:
+#define INT32_C(N)  N ## L
+#define UINT32_C(N) N ## UL
+#define INT64_C(N)  N ## LL
+#define UINT64_C(N) N ## ULL
